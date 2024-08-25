@@ -3,7 +3,8 @@ import { Table, Column, Model, DataType } from 'sequelize-typescript';
 @Table
 export class Item extends Model {
   @Column({
-    type: DataType.UUIDV4,
+    type: DataType.UUID,
+    defaultValue: DataType.UUIDV4,
     allowNull: false,
     primaryKey: true,
   })
