@@ -1,0 +1,9 @@
+{
+  "local": {
+    "username": "root",
+    "password": "root",
+    "database": "inventory_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
