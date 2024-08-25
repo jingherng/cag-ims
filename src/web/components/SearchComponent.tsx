@@ -1,25 +1,51 @@
-import { Button, Card, Input } from "antd";
+import { Button, Card, Form, Input } from "antd";
+import { ItemData, ItemSearchResults } from "./ItemSearchResults";
 import React, { useState } from 'react';
+import axios from 'axios';
+
+type SearchType = {
+  category: string;
+}
 
 export const SearchComponent = (): JSX.Element => {
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [itemData, setItemData] = useState<ItemData[]>([]);
 
-    return (
-        <Card className="bg-slate-100 m-4">
-            <div className="flex flex-row">
-                <Input
-                    className="flex-auto w-full"
-                    placeholder="Search items"
-                />
-                <Button
-                    className="flex-none ml-24"
-                    type="primary"
-                    htmlType="submit"
-                    loading={loading}
-                >
-                    Search
-                </Button>
-            </div>
-        </Card>
-    );
+  const handleOnClick = async (values: SearchType) => {
+    try {
+      const { data } = await axios.get('http://localhost:4000/api/category', { params: values });
+      setItemData(data.items);
+    } catch (err) {
+      console.error(`Error adding item: ${err}`);
+      throw err;
+    }
+  }
+  return (
+    <>
+      <Card className="bg-slate-100 m-4">
+        <Form
+          layout="horizontal"
+          onFinish={handleOnClick}
+        >
+          <Form.Item<SearchType>
+            name="category"
+          >
+            <Input
+              placeholder="Search items by category"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              loading={loading}
+            >
+              Search
+            </Button>
+          </Form.Item>
+        </Form>
+      </Card >
+      {<ItemSearchResults data={itemData} />}
+    </>
+  );
 }
