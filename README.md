@@ -13,7 +13,7 @@ Run the following commands in the following order:
 
 ## COMMON ISSUES
 
-# npm install ERESOLVE could not resolve
+### npm install ERESOLVE could not resolve
 
 run `npm install --legacy-peer-deps`
 
