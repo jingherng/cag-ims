@@ -1,4 +1,4 @@
-import { Button, Card, Form, Input } from "antd";
+import { Button, Card, Form, Input, InputNumber } from "antd";
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -15,7 +15,9 @@ export const ItemForm = (): JSX.Element => {
   const handleOnClick = async (values: FormType) => {
     try {
       const res = await axios.post('http://localhost:4000/api/add-item', values);
-      console.log(`Item added: ${res.data.id}`);
+      if (res.status === 200) {
+        alert('Item Added');
+      };
       form.resetFields();
     } catch (err) {
       console.error(`Error adding item: ${err}`);
@@ -57,7 +59,10 @@ export const ItemForm = (): JSX.Element => {
             message: "Please enter the item price"
           }]}
         >
-          <Input type="number" />
+          <InputNumber
+            prefix="$"
+            className="w-full"
+          />
         </Form.Item>
         <Form.Item>
           <Button
