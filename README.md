@@ -1,6 +1,7 @@
 ## PRE-SETUP
 
-Configure sequelize.config.ts and config.json in src/api/config to your local mysql database's username and password.
+1. Configure sequelize.config.ts and config.json in src/api/config to your local mysql database's username and password.
+2. npm i
 
 ## APP START UP
 
