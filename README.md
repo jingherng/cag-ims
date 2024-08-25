@@ -11,6 +11,12 @@ Run the following commands in the following order:
 3. npm run api:start
 4. npm run web:start
 
+## COMMON ISSUES
+
+# npm install ERESOLVE could not resolve
+
+run `npm install --legacy-peer-deps`
+
 ## Available Scripts
 
 In the project directory, you can run:
