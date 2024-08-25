@@ -4,8 +4,8 @@ import { Item } from '../models/Item.js';
 const sequelize = new Sequelize({
   dialect: 'mysql',
   host: 'localhost',
-  username: 'root',
-  password: 'root',
+  username: 'TO_BE_UPDATED',
+  password: 'TO_BE_UPDATED',
   database: 'inventory_db',
   models: [Item],
 });

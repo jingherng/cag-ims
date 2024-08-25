@@ -1,7 +1,7 @@
 {
   "local": {
-    "username": "root",
-    "password": "root",
+    "username": "TO_BE_UPDATED",
+    "password": "TO_BE_UPDATED",
     "database": "inventory_db",
     "host": "localhost",
     "dialect": "mysql"
