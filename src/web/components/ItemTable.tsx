@@ -19,11 +19,13 @@ export const ItemTable = ({
       title: 'Name',
       dataIndex: 'name',
       sorter: (a, b) => a.name.localeCompare(b.name),
+      width: '50%',
     },
     {
       title: 'Price',
       dataIndex: 'price',
       sorter: (a, b) => a.price - b.price,
+      width: '20%',
     },
     {
       title: 'Category',
@@ -32,7 +34,8 @@ export const ItemTable = ({
         text: itemData.category,
         value: itemData.category,
       })),
-      onFilter: (value, itemData) => itemData.category.includes(value as string)
+      onFilter: (value, itemData) => itemData.category.includes(value as string),
+      width: '30%',
     }
   ];
 
