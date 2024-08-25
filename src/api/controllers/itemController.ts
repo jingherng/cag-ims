@@ -25,6 +25,7 @@ export const getItemsByDateRange = async (req: Request, res: Response) => {
   });
 
   const totalPrice = items.reduce((acc, item) => acc + parseFloat(item.price), 0);
+
   res.json({
     items,
     total_price: totalPrice
@@ -38,9 +39,9 @@ export const getItemsByCategory = async (req: Request, res: Response) => {
   const items = await Item.findAll({ where: whereCondition });
 
   const totalPrice = items.reduce((acc, item) => acc + parseFloat(item.price), 0);
+
   res.json({
     items,
     total_price: totalPrice
   });
 };
-
