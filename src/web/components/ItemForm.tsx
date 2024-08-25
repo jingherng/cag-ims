@@ -62,6 +62,7 @@ export const ItemForm = (): JSX.Element => {
           <InputNumber
             prefix="$"
             className="w-full"
+            min={0}
           />
         </Form.Item>
         <Form.Item>
