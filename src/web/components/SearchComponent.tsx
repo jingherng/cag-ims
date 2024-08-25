@@ -1,5 +1,5 @@
 import { Button, Card, Form, Input } from "antd";
-import { ItemData, ItemSearchResults } from "./ItemSearchResults";
+import { ItemData, ItemTable } from "./ItemTable";
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -45,7 +45,7 @@ export const SearchComponent = (): JSX.Element => {
           </Form.Item>
         </Form>
       </Card >
-      {<ItemSearchResults data={itemData} />}
+      {<ItemTable data={itemData} />}
     </>
   );
 }

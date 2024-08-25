@@ -11,7 +11,7 @@ type Props = {
   data: ItemData[];
 }
 
-export const ItemSearchResults = ({
+export const ItemTable = ({
   data
 }: Props): JSX.Element => {
   const columns: TableColumnsType<ItemData> = [
