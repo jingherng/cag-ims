@@ -5,6 +5,14 @@ export class Item extends Model {
   @Column({
     type: DataType.UUIDV4,
     allowNull: false,
+    primaryKey: true,
+  })
+  id!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+    unique: true,
   })
   name!: string;
 
