@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Item } from '../models/Item';
+import { Item } from '../models/Item.js';
 import { Op } from 'sequelize';
 import { v4 } from 'uuid';
 
@@ -15,7 +15,6 @@ export const addItem = async (req: Request, res: Response) => {
 
     res.json({ id: item.id || v4() });
   } catch (err) {
-    console.error(`Error adding item: ${err}`);
     throw err;
   }
 };
@@ -38,7 +37,6 @@ export const getItemsByDateRange = async (req: Request, res: Response) => {
       total_price: totalPrice
     });
   } catch (err) {
-    console.error(`Error getting items by date range: ${err}`);
     throw err;
   }
 };
@@ -57,7 +55,6 @@ export const getItemsByCategory = async (req: Request, res: Response) => {
       total_price: totalPrice
     });
   } catch (err) {
-    console.error(`Error getting items by category: ${err}`);
     throw err;
   };
 };
